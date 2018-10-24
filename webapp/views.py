@@ -37,3 +37,17 @@ def book(request, flight_id):
         return render(request, "error.html", {"messege": "No selection."})
     passenger.flights.add(flight)
     return HttpResponseRedirect(reverse("flight", args=(flight_id,)))
+
+def cancle(request, flight_id):
+    try:
+        passenger_id = int(request.POST["passenger"])
+        passenger = Passenger.objects.get(pk=passenger_id)
+        flight = Flight.objects.get(pk=flight_id)
+    except Passenger.DoesNotExist:
+        return render(request, "error.html", {"messege": "No passenger."})
+    except Flight.DoesNotExist:
+        return render(request, "error.html", {"messege": "No flight."})
+    except KeyError:
+        return render(request, "error.html", {"messege": "No selection."})
+    passenger.flights.add(flight)
+    return HttpResponseRedirect(reverse("flight", args=(flight_id,)))
