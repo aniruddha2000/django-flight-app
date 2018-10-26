@@ -5,14 +5,16 @@
 {% endblock %}
 
 {% block content %}
+<div class="container">
     <div class="head">
         <h1>Flights</h1>
         <ul>
             {% for flight in flights %}
             <li>
-                <a href="{% url 'flight' flight.id %}">{{ flight }}</a>
+                <a href="{% url 'webapp:flight' flight.id %}">{{ flight }}</a>
             </li>
             {% endfor %}
         </ul>
     </div>
+</div>
 {% endblock %}

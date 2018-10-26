@@ -6,9 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}{% endblock %}</title>
     {% load staticfiles %}
-    <link rel="stylesheet" href="{% static 'webapp/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'webapp/css/bootstrap.css' %}">
 </head>
 <body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="">FlightX</a>
+            </div>
+        </div>
+    </nav>
     {% block content %}
 
     {% endblock %}

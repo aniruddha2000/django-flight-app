@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from .models import *
 from django.urls import reverse 
+from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
 def index(request):
@@ -49,4 +50,18 @@ def cancle(request, flight_id):
         return render(request, "error.html", {"messege": "No flight."})
     except KeyError:
         return render(request, "error.html", {"messege": "No selection."})
-    return HttpResponseRedirect(reverse("flight", args=(flight_id,)))
+    return HttpResponseRedirect(reverse("webapp:flight", args=(flight_id,)))
+
+def login_view(request):
+    username = request.POST.get("username")
+    password = request.POST.get("password")
+    user = authenticate(request, username=username, password=password)
+    if user is not None:
+        login(request, user)
+        return HttpResponseRedirect(reverse("webapp:index"))
+    else:
+        return render(request, "webapp/login.html", {"message": "Invalid credentials."})
+
+def logout_view(request):
+    logout(request)
+    return render(request, "webapp/login.html", {"message": "Logged out."})
