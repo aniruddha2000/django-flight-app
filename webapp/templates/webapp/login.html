@@ -1,17 +1,28 @@
 {% extends "webapp/base.html" %}
 
 {% block content %}
-<h1>Login</h1>
-{% if message %}
-    <div>
-        {{ message }}
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="">FlightX</a>
+        </div>
     </div>
-{% endif %}
+</nav>
 <div class="container">
+        <h1>Login</h1>
+        {% if message %}
+            <div>
+                {{ message }}
+            </div>
+        {% endif %}
     <form action="{% url 'webapp:index' %}" method="post">
         {% csrf_token %}
-        <input name="username" type="text"/>
-        <input name="password" type="password"/>
+        <div class="form-group">
+            <label for="usr">Username:</label>
+            <input type="text" class="form-control" id="usr">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd">
+        </div>
         <input type="submit" value="Login"/>
     </form>
 </div>

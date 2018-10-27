@@ -5,6 +5,17 @@
 {% endblock %}
 
 {% block content %}
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="">FlightX</a>
+            <a class="navbar-brand" href="{% url 'webapp:index' %}">Home</a>
+        </div>
+        <ul>
+            <li><a href="{% url 'webapp:logout' %}">Logout</a></li>
+        </ul>
+    </div>
+</nav>
 <div class="container">
     <div class="head">
         <h1>Flights</h1>
