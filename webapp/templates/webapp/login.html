@@ -1,5 +1,10 @@
 {% extends "webapp/base.html" %}
 
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'webapp/css/login.css' %}">
+{% endblock %}
+
 {% block content %}
 <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -9,12 +14,15 @@
     </div>
 </nav>
 <div class="container">
-        <h1>Login</h1>
-        {% if message %}
-            <div>
-                {{ message }}
-            </div>
-        {% endif %}
+    <div class="bg">
+        <img src="{% static 'webapp/airbus.jpg' %}" alt="">
+    </div>
+    <h1>Login</h1>
+    {% if message %}
+        <div>
+            {{ message }}
+        </div>
+    {% endif %}
     <form action="{% url 'webapp:index' %}" method="post">
         {% csrf_token %}
         <div class="form-group">

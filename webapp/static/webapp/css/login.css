@@ -1,0 +1,11 @@
+body {
+    height: 100%;
+    margin: 0;
+}
+.container .bg {
+    /*background-image: url('{% static "webapp/css/airbus.jpg" %}');*/
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

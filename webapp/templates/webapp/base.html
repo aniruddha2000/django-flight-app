@@ -7,6 +7,9 @@
     <title>{% block title %}{% endblock %}</title>
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'webapp/css/bootstrap.css' %}">
+    {% block css %}
+    
+    {% endblock %}
 </head>
 <body>
     {% block content %}
