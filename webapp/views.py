@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from .models import *
 from django.urls import reverse 
 from django.contrib.auth import authenticate, login, logout
+from .forms import UserRegisterForm
 
 # Create your views here.
 def index(request):
@@ -65,3 +66,22 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return render(request, "webapp/login.html", {"message": "Logged out."})
+
+def signup_view(request):
+    next = request.GET.get('next')
+    form = UserRegisterForm(request.POST or None)
+    if form.is_valid():
+        user = form.save(commit=False)
+        password = form.cleaned_data.get('password')
+        user.set_password(password)
+        user.save()
+        new_user = authenticate(username=user.username, password=password)
+        login(request, new_user)
+        if next:
+            return redirect(next)
+        return redirect('/')
+
+    context = {
+        'form': form,
+    }
+    return render(request, "webapp/signup.html", context)

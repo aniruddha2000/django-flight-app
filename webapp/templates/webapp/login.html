@@ -12,40 +12,15 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="">FlightX</a>
         </div>
-        <form action="{% url 'webapp:index' %}" method="POST">
+        <form action="{% url 'webapp:login' %}" method="POST">
             {% csrf_token %}
-            <input type="hidden">
-            <table>
-                <tbody>
-                    <tr>
-                        <td>
-                            <label for="email">Usename</label>
-                        </td>
-                        <td>
-                            <label for="pass">Password</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="text" class="form-control" id="usr">
-                        </td>
-                        <td>
-                            <input type="password" class="form-control" id="pwd">
-                        </td>
-                        <td>
-                            <input type="submit" value="Login"/>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <input name="username" type="text"/>
+            <input name="password" type="password"/>
+            <input type="submit" value="Login"/>
         </form>
     </div>
 </nav>
-
-<div class="bg">
-    <img src="{% static 'webapp/images/airbus.jpg' %}" alt="">
-</div>
 <div class="container">
-
+    <a href="{% url 'webapp:signup' %}">Sign up</a>
 </div>
 {% endblock %}
