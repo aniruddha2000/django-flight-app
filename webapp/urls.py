@@ -3,7 +3,8 @@ from webapp import views
 
 app_name = "webapp"
 urlpatterns = [
-    path("", views.login_view, name="login"),
+    path("", views.accounts_view, name="accounts"),
+    path("login", views.login_view, name="login"),
     path("signup", views.signup_view, name="signup"),
     path("logout", views.logout_view, name="logout"),
     path('home', views.index, name="index"),

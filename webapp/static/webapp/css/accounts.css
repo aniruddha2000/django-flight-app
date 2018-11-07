@@ -1,0 +1,14 @@
+body{
+    margin: 0%;
+}
+.bg img{
+    width: 100%;
+    height: 100%;
+}
+.navbar-default{
+    background-color: rgb(11, 133, 163);
+    color: aliceblue;
+}
+.navbar-default .navbar-brand {
+    color: rgb(241, 250, 255);
+}

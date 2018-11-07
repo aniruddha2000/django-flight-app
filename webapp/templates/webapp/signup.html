@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block css %}
-
+<link rel="stylesheet" href="{% static 'webapp/css/signup.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -15,10 +15,21 @@
     </div>
 </nav>
 <div class="container">
-    <form method="POST">
+    <form class="form" method="POST">
         {% csrf_token %}
-        {{ form }}
-        <input type="submit" />
+        <h1>Join FlightX</h1>
+        <label>Username:</label>
+        {{ form.username }}
+        <label>Enter Email:</label>
+        {{ form.email }}
+        <label>Confirm Email:</label>
+        {{ form.email2 }}
+        <label>Enter password:</label>
+        {{ form.password1 }}
+        <label>Confirm Password:</label>
+        {{ form.password2 }}
+        <br>
+        <button class="btn btn-primary btn-block">Sign Up</button>
     </form>
 </div>
 {% endblock %}
