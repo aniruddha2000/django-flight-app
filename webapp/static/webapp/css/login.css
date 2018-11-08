@@ -1,0 +1,17 @@
+body {
+    margin: 0%;
+    position: relative;
+}
+.navbar-default {
+    background-color: rgb(11, 133, 163);
+}
+.navbar-default .navbar-brand {
+    color: aliceblue;
+}
+.container .form .form-group button{
+    border-radius: 4px;
+    background-color: rgb(11, 133, 163);
+}
+.container .form .form-group button:hover {
+    background-color: #1e5f7e;
+}

@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, Http404, HttpResponseRedirect
-from .models import *
+from django.http import Http404, HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
-from .forms import UserRegisterForm, MyUserLoginForm
+from django.contrib.auth.decorators import login_required
+from .forms import *
+from .models import *
 
-# Create your views here.
+@login_required(login_url='webapp:login')
 def index(request):
     context = {
         "flights" : Flight.objects.all()
@@ -13,6 +14,7 @@ def index(request):
 
     return render(request, "webapp/home.html", context)
 
+@login_required(login_url='webapp:login')
 def flight(request, flight_id):
     try:
         flight = Flight.objects.get(pk=flight_id)
@@ -26,6 +28,7 @@ def flight(request, flight_id):
     }
     return render(request, "webapp/flight.html", context)
 
+@login_required(login_url='webapp:login')
 def book(request, flight_id):
     try:
         passenger_id = int(request.POST["passenger"])
@@ -40,6 +43,7 @@ def book(request, flight_id):
     passenger.flights.add(flight)
     return HttpResponseRedirect(reverse("webapp:flight", args=(flight_id,)))
 
+@login_required(login_url='webapp:login')
 def cancle(request, flight_id):
     try:
         passenger_id = int(request.POST["passenger"])
@@ -66,6 +70,7 @@ def login_view(request):
         return redirect('webapp:index')
     return render(request, 'webapp/login.html', {'form': form})
 
+@login_required(login_url='webapp:login')
 def logout_view(request):
     logout(request)
     return render(request, "webapp/login.html", {"message": "Logged out."})

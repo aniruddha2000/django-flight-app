@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f10ce74-a857-4f98-9cf2-d4ed56f1cbe6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/templates/webapp/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/templates/webapp/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/static/webapp/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/static/webapp/css/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp/templates/webapp/flight.html" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/templates/webapp/flight.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp/templates/webapp/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/templates/webapp/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/templates/webapp/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/templates/webapp/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/templates/webapp/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/templates/webapp/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,10 +20,11 @@
     <session id="633425049">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
     </session>

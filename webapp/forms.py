@@ -10,6 +10,7 @@ class MyUserLoginForm(forms.Form):
         attrs={
             'class': 'form-control',
             'placeholder': 'Enter username...',
+            'style': 'border-radius: 4px;',
         }
     ), )
 
@@ -17,6 +18,7 @@ class MyUserLoginForm(forms.Form):
         attrs={
             'class': 'form-control',
             'placeholder': 'Enter password...',
+            'style': 'border-radius: 4px;',
         }
     ), )
 
@@ -49,35 +51,35 @@ class UserRegisterForm(forms.ModelForm):
         attrs={
             'class': 'form-control',
             'placeholder': 'Enter username...',
-            'style': 'border-radius: 4px;'
+            'style': 'border-radius: 4px;',
         }
     ), )
     email = forms.EmailField(label='', widget=forms.TextInput(
         attrs={
             'class': 'form-control',
             'placeholder': 'Enter email...',
-            'style': 'border-radius: 4px;'
+            'style': 'border-radius: 4px;',
         }
     ),)
     email2 = forms.EmailField(label='', widget=forms.TextInput(
         attrs={
             'class': 'form-control',
             'placeholder': 'Confirm email...',
-            'style': 'border-radius: 4px;'
+            'style': 'border-radius: 4px;',
         }
     ),)
     password1 = forms.CharField(label='', widget=forms.PasswordInput(
         attrs={
             'class': 'form-control',
             'placeholder': 'Enter password...',
-            'style': 'border-radius: 4px;'
+            'style': 'border-radius: 4px;',
         }
     ), )
     password2 = forms.CharField(label='', widget=forms.PasswordInput(
         attrs={
             'class': 'form-control',
             'placeholder': 'Confirm password...',
-            'style': 'border-radius: 4px;'
+            'style': 'border-radius: 4px;',
         }
     ), )
 
