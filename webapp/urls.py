@@ -12,3 +12,4 @@ urlpatterns = [
     path("<int:flight_id>/book", views.book, name="book"),
     path("<int:flight_id>/cancle", views.cancle, name="cancle"),
 ]
+

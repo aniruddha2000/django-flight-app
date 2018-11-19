@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate, get_user_model
 User = get_user_model()
 
 
-class MyUserLoginForm(forms.Form):
+class UserLoginForm(forms.Form):
     username = forms.CharField(label='', widget=forms.TextInput(
         attrs={
             'class': 'form-control',

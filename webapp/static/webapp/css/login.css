@@ -8,10 +8,13 @@ body {
 .navbar-default .navbar-brand {
     color: aliceblue;
 }
-.container .form .form-group button{
+.container .form button{
     border-radius: 4px;
     background-color: rgb(11, 133, 163);
 }
-.container .form .form-group button:hover {
+.container .form button:hover {
     background-color: #1e5f7e;
+}
+.container .form *{
+    top: 20px;
 }

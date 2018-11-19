@@ -17,15 +17,13 @@
 <div class="container">
     <form class="form" action="{% url 'webapp:login' %}" method="POST">
         {% csrf_token %}
-        <div class="form-group">
             <h1>Sign in to Flightx</h1>
             <label>Usename:</label>
             {{ form.username }}
             <label>Password:</label>
             {{ form.password }}
             <br>
-            <button class="btb btn-primary btn-block">Login</button>
-        </div>
+            <button class="btn btn-primary btn-block">Login</button>
         <p class="mt-2 text-muted text-center">&copy; 2017-2018</p>
     </form>
 </div>

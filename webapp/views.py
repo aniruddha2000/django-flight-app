@@ -59,7 +59,7 @@ def cancle(request, flight_id):
 
 def login_view(request):
     next = request.GET.get('next')
-    form = MyUserLoginForm(request.POST or None)
+    form = UserLoginForm(request.POST or None)
     if form.is_valid():
         username = form.cleaned_data.get('username')
         password = form.cleaned_data.get('password')
